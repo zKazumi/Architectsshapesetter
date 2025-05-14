@@ -2,7 +2,7 @@ package labTasks;
 
 import java.awt.*;
 
-public class Desk {
+public class Desk implements IFurniture {
     private Color color;
 
     public int x = 20;
@@ -14,17 +14,20 @@ public class Desk {
     }
 
 
+    @Override
     // Getter
     public int getX() {
         return x;
     }
 
+    @Override
     public int getY() {
         return y;
     }
 
 
     // Setter mit Validierung
+    @Override
     public void setX(int x) {
         if (x >= 0){
             this.x = x;
@@ -33,6 +36,7 @@ public class Desk {
         }
     }
 
+    @Override
     public void setY(int y) {
         if (y >= 0){
             this.y = y;
@@ -41,8 +45,8 @@ public class Desk {
         }
     }
 
-
-    public void paintDesk(Graphics2D graphic2d) {
+    @Override
+    public void paint(Graphics2D graphic2d) {
 
         graphic2d.setColor(color);
         graphic2d.translate(50, 0);

@@ -2,13 +2,13 @@ package labTasks;
 
 import java.awt.*;
 
-public class Chair {
+public class Chair implements IFurniture {
     public boolean isInverted = false;
 
     private Color color;
 
-    public int x = 20;
-    public int y = 20;
+    private int x = 20;
+    private int y = 20;
 
 
     // Konstruktor mit Farbe
@@ -18,16 +18,19 @@ public class Chair {
 
 
     // Getter
+    @Override
     public int getX() {
         return x;
     }
 
+    @Override
     public int getY() {
         return y;
     }
 
 
     // Setter mit Validierung
+    @Override
     public void setX(int x) {
         if (x >= 0){
             this.x = x;
@@ -36,6 +39,7 @@ public class Chair {
         }
     }
 
+    @Override
     public void setY(int y) {
         if (y >= 0){
             this.y = y;
@@ -45,7 +49,8 @@ public class Chair {
     }
 
 
-    public void paintChair(Graphics2D graphic2d) {
+    @Override
+    public void paint(Graphics2D graphic2d) {
 
         graphic2d.setColor(color);
         graphic2d.scale(2, 2);
