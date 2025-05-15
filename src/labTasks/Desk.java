@@ -1,49 +1,16 @@
 package labTasks;
 
+import userInterface.Furniture;
+
 import java.awt.*;
 
-public class Desk implements IFurniture {
-    private Color color;
-
-    public int x = 20;
-    public int y = 20;
+public class Desk extends Furniture implements IFurniture {
 
     // Konstruktor mit Farbe
     public Desk(Color color) {
-        this.color = color;
+        super(color);
     }
 
-
-    @Override
-    // Getter
-    public int getX() {
-        return x;
-    }
-
-    @Override
-    public int getY() {
-        return y;
-    }
-
-
-    // Setter mit Validierung
-    @Override
-    public void setX(int x) {
-        if (x >= 0){
-            this.x = x;
-        }else{
-            System.out.println("Üngültiger Wert für x");
-        }
-    }
-
-    @Override
-    public void setY(int y) {
-        if (y >= 0){
-            this.y = y;
-        } else{
-            System.out.println("Ungültiger Wert für y");
-        }
-    }
 
     @Override
     public void paint(Graphics2D graphic2d) {

@@ -16,7 +16,7 @@ public class PaintPanel extends JPanel {
     private static final long serialVersionUID = 1L;
 
 
-    private List<IFurniture> furnitureList = new ArrayList<>();
+    private List<IFurniture> myFurniture = new ArrayList<>();
 
     public PaintPanel() {
         Random random = new Random();
@@ -27,14 +27,14 @@ public class PaintPanel extends JPanel {
             Chair chair = new Chair(Color.LIGHT_GRAY);
             chair.setX(random.nextInt(100));
             chair.setY(random.nextInt(100));
-            furnitureList.add(chair);
+            myFurniture.add(chair);
         }
 
         for (int i = 0; i < 1; i++) {
             Desk desk = new Desk(Color.BLACK);
             desk.setX(random.nextInt(100));
             desk.setY(random.nextInt(100));
-            furnitureList.add(desk);
+            myFurniture.add(desk);
         }
     }
 
@@ -43,7 +43,7 @@ public class PaintPanel extends JPanel {
         Graphics2D graphic2d =  (Graphics2D) g;
 
         // Möbel ( Chair und Desk ) werden gezeichnet
-        for (IFurniture furniture : furnitureList) {
+        for (IFurniture furniture : myFurniture) {
             furniture.paint(graphic2d);
         }
     }
