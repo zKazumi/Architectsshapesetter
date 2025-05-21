@@ -15,7 +15,7 @@ public class Desk extends Furniture implements IFurniture {
     @Override
     public void paint(Graphics2D graphic2d) {
 
-        graphic2d.setColor(color);
+        graphic2d.setColor(color); //Boilerplate: Die Zeile ist in Chair und Desk identisch
         graphic2d.translate(50, 0);
 
 
