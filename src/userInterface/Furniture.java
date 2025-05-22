@@ -1,8 +1,10 @@
 package userInterface;
 
+import labTasks.IFurniture;
+
 import java.awt.*;
 
-public abstract class Furniture {
+public abstract class Furniture implements IFurniture {
 
     public Color color;
 
