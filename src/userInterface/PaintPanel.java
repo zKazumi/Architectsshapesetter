@@ -30,6 +30,8 @@ public class PaintPanel extends JPanel {
             desk.setX(random.nextInt(100));
             desk.setY(random.nextInt(100));
             myFurniture.add(desk);
+
+        // Boilerplate: Erzeugung + Zufallsplatzierung - identsich in beiden Fällen
         }
     }
 
