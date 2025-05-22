@@ -5,6 +5,8 @@ import labTasks.Desk;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.Serial;
 import java.util.Random;
 
@@ -16,6 +18,18 @@ public class PaintPanel extends JPanel {
 
     public PaintPanel() {
         Random random = new Random();
+
+        setLayout(new BorderLayout());
+
+        JButton button = new JButton("Shift");
+        add (button, BorderLayout.EAST);
+
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                myFurniture.shiftAllElements(5, 5);
+                repaint();
+            }
+        });
 
         // Möbel ( Chair und Desk ) werden erzeugt und zur Liste hinzugefügt
         for (int i = 0; i < 1; i++) {
@@ -39,10 +53,11 @@ public class PaintPanel extends JPanel {
     public void paint(Graphics g) {
         Graphics2D graphic2d =  (Graphics2D) g;
 
+        super.paintComponent(g);
+
         // Möbel ( Chair und Desk ) werden gezeichnet
         for (Furniture furniture : myFurniture) {
             furniture.paint(graphic2d);
-            myFurniture.shiftAllElements(2, 2);
         }
     }
 }
