@@ -27,6 +27,15 @@ public class PaintPanel extends JPanel {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 myFurniture.shiftAllElements(5, 5);
+
+                for (Furniture furniture : myFurniture) {
+                    try {
+                        furniture.checkBounds(getWidth(), getHeight());
+                    } catch (FurnitureOutOfBorderException ex) {
+                        System.out.println("Fehler: " + ex.getMessage());
+                    }
+                }
+
                 repaint();
             }
         });
@@ -38,6 +47,8 @@ public class PaintPanel extends JPanel {
             chair.setY(random.nextInt(100));
             myFurniture.add(chair);
         }
+        // Boilerplate: Erzeugung + Zufallsplatzierung - identsich in beiden Fällen
+
 
         for (int i = 0; i < 1; i++) {
             Desk desk = new Desk(Color.BLACK);
@@ -49,11 +60,11 @@ public class PaintPanel extends JPanel {
         }
     }
 
+
     @Override
     public void paint(Graphics g) {
-        Graphics2D graphic2d =  (Graphics2D) g;
-
         super.paintComponent(g);
+        Graphics2D graphic2d =  (Graphics2D) g;
 
         // Möbel ( Chair und Desk ) werden gezeichnet
         for (Furniture furniture : myFurniture) {

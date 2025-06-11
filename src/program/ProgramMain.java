@@ -10,7 +10,7 @@ public class ProgramMain {
         PaintPanel paintPanel = new PaintPanel();
 
         frame.add(paintPanel);
-        frame.setSize(2000, 1000);
+        frame.setSize(1750, 1000);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

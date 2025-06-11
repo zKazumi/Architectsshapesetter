@@ -42,4 +42,14 @@ public abstract class Furniture implements IFurniture {
             System.out.println("Ungültiger Wert für y");
         }
     }
+
+    // Exception
+
+    protected void checkBounds(int panelWidth, int panelHeight) throws FurnitureOutOfBorderException {
+        if (x < 0 || y < 0 || x > panelWidth || y > panelHeight) {
+            throw new FurnitureOutOfBorderException(
+                    this.getClass().getSimpleName() + "liegt außerhalb des sichtbaren Bereichs (x=" + x + ",y=" + y + ")"
+            );
+        }
+    }
 }

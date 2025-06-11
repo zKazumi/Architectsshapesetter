@@ -9,7 +9,5 @@ public class FurnitureList extends ArrayList<Furniture> {
             f.setX(f.getX() + direction_x);
             f.setY(f.getY() + direction_y);
         }
-
-
     }
 }
